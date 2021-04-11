@@ -6,15 +6,19 @@
 	<dict>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<dict>
+				<key>APLF</key>
+				<true/>
 				<key>PluginType</key>
 				<true/>
 			</dict>
 			<key>NoOemTableId</key>
 			<false/>
+			<key>DropOem</key>
+			<false/>
+			<key>UseSystemIO</key>
+			<true/>
 		</dict>
 		<key>DropTables</key>
 		<array>
@@ -206,11 +210,15 @@
 				<false/>
 				<key>FixTMR</key>
 				<false/>
-				<key>AddPNLF</key>
+				<key>FixUSB</key>
 				<true/>
 				<key>FixWAK</key>
 				<false/>
 				<key>FixIPIC</key>
+				<false/>
+				<key>AddPNLF</key>
+				<true/>
+				<key>FixMutex</key>
 				<false/>
 				<key>Comment-IRQ Fix</key>
 				<string>The following fixes may be needed for onboard audio/USB/etc</string>
@@ -218,7 +226,34 @@
 				<false/>
 			</dict>
 			<key>DropOEM_DSM</key>
-			<false/>
+			<dict>
+				<key>USB</key>
+				<false/>
+				<key>HDMI</key>
+				<false/>
+				<key>ATI</key>
+				<false/>
+				<key>SmBUS</key>
+				<false/>
+				<key>LAN</key>
+				<false/>
+				<key>IntelGFX</key>
+				<false/>
+				<key>WIFI</key>
+				<false/>
+				<key>LPC</key>
+				<false/>
+				<key>Firewire</key>
+				<false/>
+				<key>IDE</key>
+				<false/>
+				<key>NVidia</key>
+				<true/>
+				<key>HDA</key>
+				<false/>
+				<key>SATA</key>
+				<false/>
+			</dict>
 		</dict>
 		<key>AutoMerge</key>
 		<true/>
@@ -288,10 +323,10 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>LANInjection</key>
-		<false/>
 		<key>SetIntelBacklight</key>
 		<true/>
+		<key>LANInjection</key>
+		<false/>
 		<key>Audio</key>
 		<dict>
 			<key>ResetHDA</key>
@@ -299,22 +334,38 @@
 			<key>AFGLowPowerState</key>
 			<false/>
 			<key>Inject</key>
-			<integer>11</integer>
+			<string>Detect</string>
 		</dict>
 		<key>SetIntelMaxBacklight</key>
 		<true/>
 		<key>IntelMaxValue</key>
-		<string>0x1499</string>
+		<string>0x07A1</string>
+		<key>UseIntelHDMI</key>
+		<true/>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0)/Pci(0x1f,3)</key>
 			<dict>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
+				<key>enable-hdmi20</key>
+				<data>AQAAAA==</data>
+				<key>enable-hdmi-dividers-fix</key>
+				<data>AQAAAA==</data>
+				<key>layout-id</key>
+				<integer>23</integer>
+				<key>AAPL,ig-platform-id</key>
+				<data>BAClPg==</data>
+				<key>ig-platform-id</key>
+				<data>BAClPg==</data>
+				<key>device-id</key>
+				<data>pT4AAA==</data>
+				<key>disable-external-gpu</key>
+				<data>AQAAAA==</data>
+				<key>force-online</key>
+				<data>AQAAAA==</data>
 				<key>no-controller-patch</key>
 				<integer>1</integer>
-				<key>layout-id</key>
-				<integer>11</integer>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -362,6 +413,10 @@
 	<dict>
 		<key>EDID</key>
 		<dict>
+			<key>ProductID</key>
+			<string>0x15E7</string>
+			<key>VendorID</key>
+			<string>0xDAE</string>
 			<key>Inject</key>
 			<false/>
 		</dict>
@@ -374,6 +429,8 @@
 			<key>NVidia</key>
 			<false/>
 		</dict>
+		<key>ig-platform-id</key>
+		<string>0x0400A53E</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>

@@ -4,7 +4,7 @@ P.S: There are some issues I could not yet solve. But since I only need a workin
 
 # Working features
 1. Intel UHD Graphics 630 1536 MB
-2. Brightness control (Replace config.plist with config_after_installation.plist under /EFI/EFI/CLOVER)
+2. Brightness control (Replace config.plist with config_after_installation.plist under /EFI/EFI/CLOVER. Copy SSDT-PNLF-CFL.aml to /EFI/EFI/CLOVER/ACPI/patched)
 3. Audio (Install VoodooHDA 2.9.2 Clover to ESP) and connect to bluetooth speaker or headphone
 
 # Not working
