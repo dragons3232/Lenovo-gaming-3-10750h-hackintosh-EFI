@@ -10,7 +10,7 @@ I had a hard time to find a working hackintosh EFI for my lenovo gaming 3. I gue
 6. Wifi
 
 # Not working
-1. HDMI port (use USB C to HDMI from Unitek instead)
+1. HDMI port (use USB 3.0 to HDMI from Unitek instead)
 2. Trackpad
 
 ENJOY !!!
